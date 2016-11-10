@@ -42,7 +42,7 @@ describe('failure tests', function () {
     .then(
       () => { throw new Error('An error should have been thrown'); },
       err => {
-        err.message.should.equal("ENOENT: no such file or directory, open 'this/file/does/not/exist.json'");
+        err.message.should.match(/^ENOENT: no such file or directory, open '.*exist.json'$/);
         err.should.have.property('code', 'ENOENT');
       }
     );
