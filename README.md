@@ -21,6 +21,36 @@ Features
 
 
 
+Example
+--------------------------
+Here's an example banner template (can be in a file, passed via command-line, or set programmatically):
+
+```
+<%= _.startCase(pkg.name) %> v<%= pkg.version %> (<%= moment().format('MMMM Do YYYY') %>)
+<%= pkg.description %>
+
+<%= pkg.homepage %>
+
+@author  <%= pkg.author.name %> (<%= pkg.author.url %>)
+@license <%= pkg.license %>
+```
+
+And here's what the banner would look like at the top of the Browserify bundle:
+
+```javascript
+/*!
+ * My Library v1.23.456 (November 24th 2016)
+ * Lorem ipsum dolor sit amet, consectetur adipiscing malesuada ac elit.
+ *
+ * http://mycompany.com/my-library
+ *
+ * @author  John Doe (http://linkedin.com/john-doe)
+ * @license MIT
+ */
+```
+
+
+
 Related Projects
 --------------------------
 * [globify](https://www.npmjs.com/package/globify) - Run browserify and watchify with globs - even on Windows
@@ -67,9 +97,6 @@ var banner = require('browserify-banner');
 
 browserify({debug: true})
   .plugin(banner, {
-    // Path to template file (defaults to "banner.txt")
-    file: 'path/to/my/banner/file.txt',
-
     // Custom object to use instead of the package.json file
     pkg: {
       name: 'My Library',
@@ -78,6 +105,9 @@ browserify({debug: true})
         name: 'John Doe'
       }
     },
+
+    // Path to template file (defaults to "banner.txt")
+    file: 'path/to/my/banner/file.txt',
 
     // Or just set the template directly (will be wrapped in a comment block)
     template: '<%= pkg.name %> v<%= pkg.version %>\n' +
