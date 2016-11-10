@@ -3,7 +3,6 @@
 const fs = require('fs');
 const spawnSync = require('child_process').spawnSync;
 const inspectBundle = require('../fixtures/inspect-bundle');
-const banner = require('../../');
 require('chai').should();
 
 describe('Browserify CLI + banner', function () {
