@@ -1,0 +1,12 @@
+{
+  "name": "alternate-world",
+  "version": "9.87.654",
+  "main": "index.js",
+  "description": "This is not the package.json you're looking for",
+  "author": {
+    "name": "John Doe",
+    "url": "http://john-doe-software.com"
+  },
+  "license": "MIT",
+  "homepage": "https://hello-world.com"
+}
