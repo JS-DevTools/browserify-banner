@@ -81,7 +81,7 @@ browserify({debug: true})
 
     // Or just set the template directly (will be wrapped in a comment block)
     template: '<%= pkg.name %> v<%= pkg.version %>\n' +
-              '<%= moment().format('MMMM Do YYYY) %>',
+              '<%= moment().format('MMMM Do YYYY') %>',
 
     // Or set the banner directly (will NOT be wrapped in a comment block)
     banner: '// This banner is NOT a template, so <%= this.doesnt.do.anything %>.\n' +
