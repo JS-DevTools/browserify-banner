@@ -5,7 +5,7 @@ const inspectBundle = require('../fixtures/inspect-bundle');
 const inspectSourcemap = require('../fixtures/inspect-sourcemap');
 require('chai').should();
 
-describe('Browserify only (without banner)', function () {
+describe('Browserify API only (without banner)', function () {
   it('should output a default Browserify bundle', function () {
     return browserify({
       entries: 'no-banner/index.js'

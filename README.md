@@ -73,19 +73,19 @@ Usage
 If used without any options, then it will automatically search for a file named "banner.txt".
 
 ```bash
-browserify -p banner
+browserify -p browserify-banner
 ```
 
 Or you can use Browserify's sub-argument command-line syntax to specify a different file:
 
 ```bash
-browserify -p [ banner --file src/license.txt ]
+browserify -p [ browserify-banner --file src/license.txt ]
 ```
 
 Or you can specify the banner template directly:
 
 ```bash
-browserify -p [ banner --template "<%= pkg.name %> v<%= pkg.version %>" ]
+browserify -p [ browserify-banner --template "<%= pkg.name %> v<%= pkg.version %>" ]
 ```
 
 ### Browserify API

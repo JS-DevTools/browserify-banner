@@ -13,6 +13,8 @@ skip_tags: true
 install:
   - ps: Install-Product node $env:nodejs_version
   - npm install
+  - npm link
+  - npm link browserify-banner
 
 test_script:
   # Output useful info for debugging.

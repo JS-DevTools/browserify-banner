@@ -6,7 +6,7 @@ const inspectSourcemap = require('../fixtures/inspect-sourcemap');
 const banner = require('../../');
 require('chai').should();
 
-describe('Browserify + banner (with options)', function () {
+describe('Browserify API + banner (with options)', function () {
   it('should use an alternate banner file', function () {
     return browserify({
       entries: 'has-banner/index.js',
