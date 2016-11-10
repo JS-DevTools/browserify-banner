@@ -42,7 +42,6 @@
     "chai": "^3.5.0",
     "codacy-coverage": "^2.0.0",
     "coveralls": "^2.11.14",
-    "del": "^2.2.2",
     "eslint": "^3.9.0",
     "eslint-config-modular": "^1.0.1",
     "exorcist": "^0.4.0",
