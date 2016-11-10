@@ -58,7 +58,7 @@ describe('Browserify + banner (with options)', function () {
       });
 
       // The banner should contain the data from alt-package.json instead of package.json
-      output.bundle.should.match(/\* alternate-world v9.87.654/);
+      output.bundle.should.match(/\* Alternate World v9.87.654/);
 
       // The sourcemap mappings should start with 9 blank lines,
       // since "banner.txt" produce a 9-line banner
@@ -99,7 +99,7 @@ describe('Browserify + banner (with options)', function () {
       });
 
       // The banner should contain the data from alt-package.json instead of package.json
-      output.bundle.should.match(/\* inline-package v1.2.3/);
+      output.bundle.should.match(/\* Inline Package v1.2.3/);
 
       // The sourcemap mappings should start with 9 blank lines,
       // since "banner.txt" produce a 9-line banner
