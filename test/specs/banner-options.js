@@ -198,8 +198,8 @@ describe('Browserify + banner (with options)', function () {
       inspectBundle(output.bundle, {
         parts: [
           '// This banner is NOT a template, so <%= this.doesnt.do.anything %>.\n' +
-          '// But I can inject custom code at the top of the banner...\n' +
-          'window.myCustomVariable = navigator.location;\n',
+          '// But I can inject custom code at the top of the bundle...\n' +
+          'window.myCustomVariable = Date.now();\n',
           'umd prelude', 'prelude', 'minified modules', 'postlude', 'umd postlude', 'sourcemap'
         ],
       });
