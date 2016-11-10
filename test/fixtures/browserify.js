@@ -48,7 +48,7 @@ function runBrowserify (options) {
     }
     stream.pipe(fs.createWriteStream(bundlePath));
 
-    stream.on('end', () => setTimeout(returnResults, 100));
+    stream.on('end', () => setTimeout(returnResults, 200));
 
     function returnResults () {
       try {
