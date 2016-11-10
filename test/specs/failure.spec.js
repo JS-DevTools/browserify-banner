@@ -1,7 +1,7 @@
 'use strict';
 
 const browserify = require('../fixtures/browserify');
-const parts = require('../fixtures/parts');
+const inspectBundle = require('../fixtures/inspect-bundle');
 const banner = require('../../');
 require('chai').should();
 
@@ -14,7 +14,9 @@ describe('failure tests', function () {
     .then(output => {
       // The bundle should just contain the Browserify prelude and postlude,
       // with our modules in-between.  There shouldn't be any banner or sourcemap.
-      parts.expect(output.bundle, ['prelude', 'modules', 'postlude']);
+      inspectBundle(output.bundle, {
+        parts: ['prelude', 'modules', 'postlude'],
+      });
     });
   });
 

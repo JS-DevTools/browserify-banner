@@ -1,7 +1,8 @@
 'use strict';
 
 const browserify = require('../fixtures/browserify');
-const parts = require('../fixtures/parts');
+const inspectBundle = require('../fixtures/inspect-bundle');
+const inspectSourcemap = require('../fixtures/inspect-sourcemap');
 const banner = require('../../');
 require('chai').should();
 
@@ -20,22 +21,18 @@ describe('Browserify + banner (with options)', function () {
       // with the Browserify prelude and postlude in-between,
       // and then our minified modules in-between that,
       // and finally, the sourcemap at the end
-      parts.expect(output.bundle, [
-        'banner', 'umd prelude', 'prelude', 'minified modules', 'postlude', 'umd postlude', 'sourcemap'
-      ]);
-
-      // The sourcemap should reference the Browserify prelude file
-      // and all of our module files
-      output.sourcemap.sources.should.deep.equal([
-        '../../../../node_modules/browser-pack/_prelude.js',
-        '../hello-world.js',
-        '../index.js',
-        '../say/index.js'
-      ]);
+      inspectBundle(output.bundle, {
+        parts: [
+          'banner', 'umd prelude', 'prelude', 'minified modules', 'postlude',
+          'umd postlude', 'sourcemap'
+        ],
+      });
 
       // The sourcemap mappings should start with 3 blank lines,
       // since "alt-banner.txt" produce a 3-line banner
-      output.sourcemap.mappings.should.match(/^;;;AAAA;/);
+      inspectSourcemap(output.sourcemap, {
+        blankLines: 3,
+      });
     });
   });
 
@@ -53,25 +50,21 @@ describe('Browserify + banner (with options)', function () {
       // with the Browserify prelude and postlude in-between,
       // and then our minified modules in-between that,
       // and finally, the sourcemap at the end
-      parts.expect(output.bundle, [
-        'banner', 'umd prelude', 'prelude', 'minified modules', 'postlude', 'umd postlude', 'sourcemap'
-      ]);
+      inspectBundle(output.bundle, {
+        parts: [
+          'banner', 'umd prelude', 'prelude', 'minified modules', 'postlude',
+          'umd postlude', 'sourcemap'
+        ],
+      });
 
       // The banner should contain the data from alt-package.json instead of package.json
       output.bundle.should.match(/\* alternate-world v9.87.654/);
 
-      // The sourcemap should reference the Browserify prelude file
-      // and all of our module files
-      output.sourcemap.sources.should.deep.equal([
-        '../../../../node_modules/browser-pack/_prelude.js',
-        '../hello-world.js',
-        '../index.js',
-        '../say/index.js'
-      ]);
-
       // The sourcemap mappings should start with 9 blank lines,
       // since "banner.txt" produce a 9-line banner
-      output.sourcemap.mappings.should.match(/^;;;;;;;;;AAAA;/);
+      inspectSourcemap(output.sourcemap, {
+        blankLines: 9,
+      });
     });
   });
 
@@ -98,25 +91,21 @@ describe('Browserify + banner (with options)', function () {
       // with the Browserify prelude and postlude in-between,
       // and then our minified modules in-between that,
       // and finally, the sourcemap at the end
-      parts.expect(output.bundle, [
-        'banner', 'umd prelude', 'prelude', 'minified modules', 'postlude', 'umd postlude', 'sourcemap'
-      ]);
+      inspectBundle(output.bundle, {
+        parts: [
+          'banner', 'umd prelude', 'prelude', 'minified modules', 'postlude',
+          'umd postlude', 'sourcemap'
+        ],
+      });
 
       // The banner should contain the data from alt-package.json instead of package.json
       output.bundle.should.match(/\* inline-package v1.2.3/);
 
-      // The sourcemap should reference the Browserify prelude file
-      // and all of our module files
-      output.sourcemap.sources.should.deep.equal([
-        '../../../../node_modules/browser-pack/_prelude.js',
-        '../hello-world.js',
-        '../index.js',
-        '../say/index.js'
-      ]);
-
       // The sourcemap mappings should start with 9 blank lines,
       // since "banner.txt" produce a 9-line banner
-      output.sourcemap.mappings.should.match(/^;;;;;;;;;AAAA;/);
+      inspectSourcemap(output.sourcemap, {
+        blankLines: 9,
+      });
     });
   });
 
@@ -136,25 +125,21 @@ describe('Browserify + banner (with options)', function () {
       // with the Browserify prelude and postlude in-between,
       // and then our minified modules in-between that,
       // and finally, the sourcemap at the end
-      parts.expect(output.bundle, [
-        'banner', 'umd prelude', 'prelude', 'minified modules', 'postlude', 'umd postlude', 'sourcemap'
-      ]);
+      inspectBundle(output.bundle, {
+        parts: [
+          'banner', 'umd prelude', 'prelude', 'minified modules', 'postlude',
+          'umd postlude', 'sourcemap'
+        ],
+      });
 
       // The banner should contain the data from alt-package.json instead of package.json
       output.bundle.should.match(/\* This package was written by John Doe\n/);
 
-      // The sourcemap should reference the Browserify prelude file
-      // and all of our module files
-      output.sourcemap.sources.should.deep.equal([
-        '../../../../node_modules/browser-pack/_prelude.js',
-        '../hello-world.js',
-        '../index.js',
-        '../say/index.js'
-      ]);
-
       // The sourcemap mappings should start with 3 blank lines,
       // since our custom banner text will be turned into a 3-line comment block
-      output.sourcemap.mappings.should.match(/^;;;AAAA;/);
+      inspectSourcemap(output.sourcemap, {
+        blankLines: 3,
+      });
     });
   });
 
@@ -176,23 +161,18 @@ describe('Browserify + banner (with options)', function () {
       // with the Browserify prelude and postlude in-between,
       // and then our minified modules in-between that,
       // and finally, the sourcemap at the end
-      parts.expect(output.bundle, [
-        '// This banner is already a comment\n// hello-world v1.23.456\n',
-        'umd prelude', 'prelude', 'minified modules', 'postlude', 'umd postlude', 'sourcemap'
-      ]);
-
-      // The sourcemap should reference the Browserify prelude file
-      // and all of our module files
-      output.sourcemap.sources.should.deep.equal([
-        '../../../../node_modules/browser-pack/_prelude.js',
-        '../hello-world.js',
-        '../index.js',
-        '../say/index.js'
-      ]);
+      inspectBundle(output.bundle, {
+        parts: [
+          '// This banner is already a comment\n// hello-world v1.23.456\n',
+          'umd prelude', 'prelude', 'minified modules', 'postlude', 'umd postlude', 'sourcemap'
+        ],
+      });
 
       // The sourcemap mappings should start with 2 blank lines,
       // since our custom banner text is a 2-line comment
-      output.sourcemap.mappings.should.match(/^;;AAAA;/);
+      inspectSourcemap(output.sourcemap, {
+        blankLines: 2,
+      });
     });
   });
 
@@ -215,25 +195,20 @@ describe('Browserify + banner (with options)', function () {
       // with the Browserify prelude and postlude in-between,
       // and then our minified modules in-between that,
       // and finally, the sourcemap at the end
-      parts.expect(output.bundle, [
-        '// This banner is NOT a template, so <%= this.doesnt.do.anything %>.\n' +
-        '// But I can inject custom code at the top of the banner...\n' +
-        'window.myCustomVariable = navigator.location;\n',
-        'umd prelude', 'prelude', 'minified modules', 'postlude', 'umd postlude', 'sourcemap'
-      ]);
-
-      // The sourcemap should reference the Browserify prelude file
-      // and all of our module files
-      output.sourcemap.sources.should.deep.equal([
-        '../../../../node_modules/browser-pack/_prelude.js',
-        '../hello-world.js',
-        '../index.js',
-        '../say/index.js'
-      ]);
+      inspectBundle(output.bundle, {
+        parts: [
+          '// This banner is NOT a template, so <%= this.doesnt.do.anything %>.\n' +
+          '// But I can inject custom code at the top of the banner...\n' +
+          'window.myCustomVariable = navigator.location;\n',
+          'umd prelude', 'prelude', 'minified modules', 'postlude', 'umd postlude', 'sourcemap'
+        ],
+      });
 
       // The sourcemap mappings should start with 3 blank lines,
       // since our custom banner text is a 3-line code block
-      output.sourcemap.mappings.should.match(/^;;;AAAA;/);
+      inspectSourcemap(output.sourcemap, {
+        blankLines: 3,
+      });
     });
   });
 });

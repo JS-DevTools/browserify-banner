@@ -3,18 +3,17 @@
 
 require('chai').should();
 
-module.exports = {
-  split: splitBundleIntoParts,
-  expect: expectParts,
-};
+module.exports = inspectBundle;
 
 /**
  * Asserts that the given bundle consists of the expected parts
  *
- * @param {string} bundle - The JavaScript bundle
- * @param {string[]} expectedParts - An array of the named parts that are expected
+ * @param {string} bundle
+ *
+ * @param {string[]} options.parts
+ * An array of the named parts that are expected
  */
-function expectParts (bundle, expectedParts) {
+function inspectBundle (bundle, options) {
   let actualParts = splitBundleIntoParts(bundle);
 
   // If the last part is just the terminator, then ignore it
@@ -22,7 +21,7 @@ function expectParts (bundle, expectedParts) {
     actualParts.pop();
   }
 
-  actualParts.should.deep.equal(expectedParts);
+  actualParts.should.deep.equal(options.parts);
 }
 
 /**
