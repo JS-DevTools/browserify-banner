@@ -6,6 +6,11 @@ const inspectBundle = require('../fixtures/inspect-bundle');
 require('chai').should();
 
 describe('Browserify CLI + banner', function () {
+  if (process.platform === 'win32') {
+    // TODO: Make these tests generic enough to work on Windows, MacOS, and Linux
+    return;
+  }
+
   it('should use the default banner file', function (done) {
     let output = spawnSync(
       'node_modules/.bin/browserify', [
