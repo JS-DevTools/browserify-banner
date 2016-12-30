@@ -59,5 +59,8 @@
     "offset-sourcemap-lines": "^1.0.0",
     "ono": "^2.2.1",
     "through2": "^2.0.1"
+  },
+  "engines": {
+    "node": ">=4"
   }
 }
