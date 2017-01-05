@@ -1,6 +1,6 @@
 {
   "name": "browserify-banner",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Add a comment (and/or code) to the top of your Browserify bundle",
   "keywords": [
     "browserify",
