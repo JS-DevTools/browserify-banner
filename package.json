@@ -19,6 +19,10 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/BigstickCarpet/browserify-banner",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BigstickCarpet/browserify-banner.git"
+  },
   "main": "lib/index.js",
   "files": [
     "bin",
@@ -31,10 +35,6 @@
     "upgrade": "npm-check -u",
     "bump": "bump --prompt --tag --push --all",
     "release": "npm run upgrade && npm test && npm run bump && npm publish"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BigstickCarpet/browserify-banner.git"
   },
   "devDependencies": {
     "browserify": "^13.3.0",
