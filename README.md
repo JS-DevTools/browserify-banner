@@ -158,7 +158,7 @@ To build the project locally on your computer:
 
 3. __Link the module to itself__ (so Browserify can find the plugin)<br>
 `npm link`<br>
-`npm link sourcemapify`
+`npm link browserify-banner`
 
 4. __Run the tests__<br>
 `npm test`
