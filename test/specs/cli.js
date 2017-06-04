@@ -22,6 +22,7 @@ describe('Browserify CLI + banner', function () {
 
     output.should.not.have.property('error');
     output.stdout.toString().should.be.empty;
+    output.stderr.toString().should.be.empty;
     output.status.should.equal(0);
 
     // The bundle should start with the banner from "alt-banner.txt",
