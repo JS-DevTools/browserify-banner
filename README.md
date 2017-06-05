@@ -3,7 +3,7 @@ Browserify Banner
 #### Add a comment (and/or code) to the top of your Browserify bundle
 
 [![Build Status](https://api.travis-ci.org/BigstickCarpet/browserify-banner.svg?branch=master)](https://travis-ci.org/BigstickCarpet/browserify-banner)
-[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/BigstickCarpet/browserify-banner?svg=true&failingText=Windows%20build%20failing&passingText=Windows%20build%20passing)](https://ci.appveyor.com/project/BigstickCarpet/browserify-banner)
+[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/BigstickCarpet/browserify-banner?svg=true&branch=master&failingText=Windows%20build%20failing&passingText=Windows%20build%20passing)](https://ci.appveyor.com/project/BigstickCarpet/browserify-banner)
 
 [![Coverage Status](https://coveralls.io/repos/github/BigstickCarpet/browserify-banner/badge.svg?branch=master)](https://coveralls.io/github/BigstickCarpet/browserify-banner?branch=master)
 [![Codacy Score](https://www.codacy.com/project/badge/d20aa8b830124acb87b5e6f2114f0d84)](https://www.codacy.com/public/jamesmessinger/browserify-banner)
