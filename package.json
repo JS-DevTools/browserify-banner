@@ -38,18 +38,18 @@
   },
   "devDependencies": {
     "browserify": "^14.3.0",
-    "chai": "^4.0.1",
+    "chai": "^4.0.2",
     "codacy-coverage": "^2.0.2",
     "coveralls": "^2.13.1",
-    "eslint": "^3.19.0",
-    "eslint-config-modular": "^4.0.0",
+    "eslint": "^4.1.1",
+    "eslint-config-modular": "^4.1.0",
     "exorcist": "^0.4.0",
     "istanbul": "^0.4.5",
     "mkdirp": "^0.5.1",
     "mocha": "^3.3.0",
     "npm-check": "^5.4.0",
-    "touch": "^1.0.0",
-    "uglifyify": "^3.0.4",
+    "touch": "^3.1.0",
+    "uglifyify": "^4.0.2",
     "version-bump-prompt": "^3.1.0"
   },
   "dependencies": {
@@ -57,7 +57,7 @@
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "offset-sourcemap-lines": "^1.0.0",
-    "ono": "^2.2.4",
+    "ono": "^4.0.0",
     "through2": "^2.0.3"
   },
   "engines": {
