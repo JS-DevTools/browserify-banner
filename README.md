@@ -6,7 +6,7 @@ Browserify Banner
 [![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/BigstickCarpet/browserify-banner?svg=true&branch=master&failingText=Windows%20build%20failing&passingText=Windows%20build%20passing)](https://ci.appveyor.com/project/BigstickCarpet/browserify-banner)
 
 [![Coverage Status](https://coveralls.io/repos/github/BigstickCarpet/browserify-banner/badge.svg?branch=master)](https://coveralls.io/github/BigstickCarpet/browserify-banner?branch=master)
-[![Codacy Score](https://www.codacy.com/project/badge/d20aa8b830124acb87b5e6f2114f0d84)](https://www.codacy.com/public/jamesmessinger/browserify-banner)
+[![Codacy Score](https://api.codacy.com/project/badge/Grade/d20aa8b830124acb87b5e6f2114f0d84)](https://www.codacy.com/public/jamesmessinger/browserify-banner)
 [![Inline docs](http://inch-ci.org/github/BigstickCarpet/browserify-banner.svg?branch=master&style=shields)](http://inch-ci.org/github/BigstickCarpet/browserify-banner)
 [![Dependencies](https://david-dm.org/BigstickCarpet/browserify-banner.svg)](https://david-dm.org/BigstickCarpet/browserify-banner)
 
