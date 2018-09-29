@@ -9,6 +9,7 @@ describe('Browserify CLI + banner', function () {
   it('should use the default banner file', function (done) {
     let output = spawnSync(
       'node', [
+        '--no-warnings',
         'node_modules/browserify/bin/cmd.js',
         'test/test-apps/has-banner/index.js',
         '--outfile', 'test/test-apps/has-banner/dist/bundle.js',
@@ -39,6 +40,7 @@ describe('Browserify CLI + banner', function () {
   it('should use an alternate banner file', function (done) {
     let output = spawnSync(
       'node', [
+        '--no-warnings',
         'node_modules/browserify/bin/cmd.js',
         'test/test-apps/has-banner/index.js',
         '--outfile', 'test/test-apps/has-banner/dist/bundle.js',
@@ -69,6 +71,7 @@ describe('Browserify CLI + banner', function () {
   it('should use an alternate package file', function (done) {
     let output = spawnSync(
       'node', [
+        '--no-warnings',
         'node_modules/browserify/bin/cmd.js',
         'test/test-apps/has-banner/index.js',
         '--outfile', 'test/test-apps/has-banner/dist/bundle.js',
@@ -102,6 +105,7 @@ describe('Browserify CLI + banner', function () {
   it('should use an inline banner template', function (done) {
     let output = spawnSync(
       'node', [
+        '--no-warnings',
         'node_modules/browserify/bin/cmd.js',
         'test/test-apps/has-banner/index.js',
         '--outfile', 'test/test-apps/has-banner/dist/bundle.js',
