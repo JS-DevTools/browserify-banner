@@ -3,11 +3,11 @@ Browserify Banner
 #### Add a comment (and/or code) to the top of your Browserify bundle
 
 [![Build Status](https://api.travis-ci.org/James-Messinger/browserify-banner.svg?branch=master)](https://travis-ci.org/James-Messinger/browserify-banner)
-[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/BigstickCarpet/browserify-banner?svg=true&branch=master&failingText=Windows%20build%20failing&passingText=Windows%20build%20passing)](https://ci.appveyor.com/project/BigstickCarpet/browserify-banner)
+[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/james-messinger/browserify-banner?svg=true&branch=master&failingText=Windows%20build%20failing&passingText=Windows%20build%20passing)](https://ci.appveyor.com/project/BigstickCarpet/browserify-banner)
 
-[![Coverage Status](https://coveralls.io/repos/github/BigstickCarpet/browserify-banner/badge.svg?branch=master)](https://coveralls.io/github/BigstickCarpet/browserify-banner?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/James-Messinger/browserify-banner/badge.svg?branch=master)](https://coveralls.io/github/James-Messinger/browserify-banner?branch=master)
 [![Codacy Score](https://api.codacy.com/project/badge/Grade/d20aa8b830124acb87b5e6f2114f0d84)](https://www.codacy.com/public/jamesmessinger/browserify-banner)
-[![Inline docs](http://inch-ci.org/github/BigstickCarpet/browserify-banner.svg?branch=master&style=shields)](http://inch-ci.org/github/BigstickCarpet/browserify-banner)
+[![Inline docs](http://inch-ci.org/github/James-Messinger/browserify-banner.svg?branch=master&style=shields)](http://inch-ci.org/github/James-Messinger/browserify-banner)
 [![Dependencies](https://david-dm.org/James-Messinger/browserify-banner.svg)](https://david-dm.org/James-Messinger/browserify-banner)
 
 [![npm](http://img.shields.io/npm/v/browserify-banner.svg)](https://www.npmjs.com/package/browserify-banner)
