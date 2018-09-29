@@ -6,14 +6,10 @@ const inspectBundle = require('../fixtures/inspect-bundle');
 require('chai').should();
 
 describe('Browserify CLI + banner', function () {
-  if (process.platform === 'win32') {
-    // TODO: Make these tests generic enough to work on Windows, MacOS, and Linux
-    return;
-  }
-
   it('should use the default banner file', function (done) {
     let output = spawnSync(
-      'node_modules/.bin/browserify', [
+      'node', [
+        'node_modules/browserify/bin/cmd.js',
         'test/test-apps/has-banner/index.js',
         '--outfile', 'test/test-apps/has-banner/dist/bundle.js',
         '--standalone', 'Fizz.Buzz',
@@ -42,7 +38,8 @@ describe('Browserify CLI + banner', function () {
 
   it('should use an alternate banner file', function (done) {
     let output = spawnSync(
-      'node_modules/.bin/browserify', [
+      'node', [
+        'node_modules/browserify/bin/cmd.js',
         'test/test-apps/has-banner/index.js',
         '--outfile', 'test/test-apps/has-banner/dist/bundle.js',
         '--standalone', 'Fizz.Buzz',
@@ -71,7 +68,8 @@ describe('Browserify CLI + banner', function () {
 
   it('should use an alternate package file', function (done) {
     let output = spawnSync(
-      'node_modules/.bin/browserify', [
+      'node', [
+        'node_modules/browserify/bin/cmd.js',
         'test/test-apps/has-banner/index.js',
         '--outfile', 'test/test-apps/has-banner/dist/bundle.js',
         '--standalone', 'Fizz.Buzz',
@@ -103,7 +101,8 @@ describe('Browserify CLI + banner', function () {
 
   it('should use an inline banner template', function (done) {
     let output = spawnSync(
-      'node_modules/.bin/browserify', [
+      'node', [
+        'node_modules/browserify/bin/cmd.js',
         'test/test-apps/has-banner/index.js',
         '--outfile', 'test/test-apps/has-banner/dist/bundle.js',
         '--standalone', 'Fizz.Buzz',

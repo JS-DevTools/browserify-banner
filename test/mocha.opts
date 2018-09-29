@@ -2,4 +2,4 @@
 --async-only
 --retries 2
 test/fixtures/*.js
-test/specs/*.js
+test/specs/*.spec.js
