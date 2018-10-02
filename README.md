@@ -7,10 +7,10 @@ Browserify Banner
 
 [![Coverage Status](https://coveralls.io/repos/github/James-Messinger/browserify-banner/badge.svg?branch=master)](https://coveralls.io/github/James-Messinger/browserify-banner?branch=master)
 [![Codacy Score](https://api.codacy.com/project/badge/Grade/d20aa8b830124acb87b5e6f2114f0d84)](https://www.codacy.com/public/jamesmessinger/browserify-banner)
-[![Inline docs](http://inch-ci.org/github/James-Messinger/browserify-banner.svg?branch=master&style=shields)](http://inch-ci.org/github/James-Messinger/browserify-banner)
+[![Inline docs](https://inch-ci.org/github/James-Messinger/browserify-banner.svg?branch=master&style=shields)](https://inch-ci.org/github/James-Messinger/browserify-banner)
 [![Dependencies](https://david-dm.org/James-Messinger/browserify-banner.svg)](https://david-dm.org/James-Messinger/browserify-banner)
 
-[![npm](http://img.shields.io/npm/v/browserify-banner.svg)](https://www.npmjs.com/package/browserify-banner)
+[![npm](https://img.shields.io/npm/v/browserify-banner.svg)](https://www.npmjs.com/package/browserify-banner)
 [![License](https://img.shields.io/npm/l/browserify-banner.svg)](LICENSE)
 
 Features
