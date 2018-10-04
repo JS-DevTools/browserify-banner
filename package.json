@@ -1,6 +1,6 @@
 {
   "name": "browserify-banner",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Add a comment (and/or code) to the top of your Browserify bundle",
   "keywords": [
     "browserify",
@@ -49,7 +49,7 @@
     "nyc": "^13.0.1",
     "touch": "^3.1.0",
     "uglifyify": "^5.0.1",
-    "version-bump-prompt": "^4.1.0"
+    "version-bump-prompt": "^4.2.0"
   },
   "dependencies": {
     "convert-source-map": "^1.6.0",
