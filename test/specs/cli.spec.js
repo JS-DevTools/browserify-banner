@@ -6,6 +6,12 @@ const inspectBundle = require('../fixtures/inspect-bundle');
 require('chai').should();
 
 describe('Browserify CLI + banner', function () {
+  before('Make sure browserify-banner is in node_modules', () => {
+    if (!fs.existsSync('node_modules/browserify-banner')) {
+      throw new Error('node_modules/browserify-banner does not exist.  Try running "npm link browserify-banner"');
+    }
+  });
+
   it('should use the default banner file', function (done) {
     let output = spawnSync(
       'node', [
