@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-require('chai').should();
+require("chai").should();
 
 module.exports = inspectSourceMap;
 
@@ -16,14 +16,14 @@ function inspectSourceMap (sourcemap, options) {
   // The first source file in the sourcemap should be the Browserify prelude
   sourcemap.sources[0].should.be.oneOf([
     // Node 4
-    '../../../../node_modules/browserify/node_modules/browser-pack/_prelude.js',
+    "../../../../node_modules/browserify/node_modules/browser-pack/_prelude.js",
 
     // Node 5+
-    '../../../../node_modules/browser-pack/_prelude.js',
+    "../../../../node_modules/browser-pack/_prelude.js",
 
     // Windows
-    '..\\..\\..\\..\\node_modules\\browserify\\node_modules\\browser-pack\\_prelude.js',
-    '..\\..\\..\\..\\node_modules\\browser-pack\\_prelude.js',
+    "..\\..\\..\\..\\node_modules\\browserify\\node_modules\\browser-pack\\_prelude.js",
+    "..\\..\\..\\..\\node_modules\\browser-pack\\_prelude.js",
   ]);
 
   // The rest of the source files should be our module files
@@ -35,7 +35,7 @@ function inspectSourceMap (sourcemap, options) {
   sourcemap.sources.should.have.lengthOf(4);
 
   // The sourcemap's mappings should start with blank lines for the banner
-  let blankLines = String(';;;;;;;;;;;;;;;').substr(0, options.blankLines);
-  blankLines += 'AAAA;';
+  let blankLines = String(";;;;;;;;;;;;;;;").substr(0, options.blankLines);
+  blankLines += "AAAA;";
   sourcemap.mappings.substr(0, blankLines.length).should.equal(blankLines);
 }

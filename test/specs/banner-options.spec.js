@@ -1,19 +1,19 @@
-'use strict';
+"use strict";
 
-const browserify = require('../fixtures/browserify');
-const inspectBundle = require('../fixtures/inspect-bundle');
-const inspectSourcemap = require('../fixtures/inspect-sourcemap');
-const banner = require('../../');
-require('chai').should();
+const browserify = require("../fixtures/browserify");
+const inspectBundle = require("../fixtures/inspect-bundle");
+const inspectSourcemap = require("../fixtures/inspect-sourcemap");
+const banner = require("../../");
+require("chai").should();
 
-describe('Browserify API + banner (with options)', function () {
-  it('should use an alternate banner file', function () {
+describe("Browserify API + banner (with options)", function () {
+  it("should use an alternate banner file", function () {
     return browserify({
-      entries: 'has-banner/index.js',
-      plugin: [[banner, { file: 'test/test-apps/has-banner/alt-banner.txt' }]],
+      entries: "has-banner/index.js",
+      plugin: [[banner, { file: "test/test-apps/has-banner/alt-banner.txt" }]],
       standalone: true,
       debug: true,
-      transform: ['uglifyify'],
+      transform: ["uglifyify"],
     })
       .then(output => {
       // The bundle should start with the banner from "alt-banner.txt",
@@ -23,8 +23,8 @@ describe('Browserify API + banner (with options)', function () {
       // and finally, the sourcemap at the end
         inspectBundle(output.bundle, {
           parts: [
-            'banner', 'umd prelude', 'prelude', 'minified modules', 'postlude',
-            'umd postlude', 'sourcemap'
+            "banner", "umd prelude", "prelude", "minified modules", "postlude",
+            "umd postlude", "sourcemap"
           ],
         });
 
@@ -36,13 +36,13 @@ describe('Browserify API + banner (with options)', function () {
       });
   });
 
-  it('should use an alternate package file', function () {
+  it("should use an alternate package file", function () {
     return browserify({
-      entries: 'has-banner/index.js',
-      plugin: [[banner, { pkg: 'test/test-apps/has-banner/alt-package.json' }]],
+      entries: "has-banner/index.js",
+      plugin: [[banner, { pkg: "test/test-apps/has-banner/alt-package.json" }]],
       standalone: true,
       debug: true,
-      transform: ['uglifyify'],
+      transform: ["uglifyify"],
     })
       .then(output => {
       // The bundle should start with the banner from "banner.txt",
@@ -52,8 +52,8 @@ describe('Browserify API + banner (with options)', function () {
       // and finally, the sourcemap at the end
         inspectBundle(output.bundle, {
           parts: [
-            'banner', 'umd prelude', 'prelude', 'minified modules', 'postlude',
-            'umd postlude', 'sourcemap'
+            "banner", "umd prelude", "prelude", "minified modules", "postlude",
+            "umd postlude", "sourcemap"
           ],
         });
 
@@ -68,22 +68,22 @@ describe('Browserify API + banner (with options)', function () {
       });
   });
 
-  it('should use an alternate package object', function () {
+  it("should use an alternate package object", function () {
     return browserify({
-      entries: 'has-banner/index.js',
+      entries: "has-banner/index.js",
       plugin: [[banner, {
         pkg: {
-          name: 'inline-package',
-          version: '1.2.3',
-          description: 'my custom description',
+          name: "inline-package",
+          version: "1.2.3",
+          description: "my custom description",
           author: {
-            name: 'John Doe',
+            name: "John Doe",
           }
         }
       }]],
       standalone: true,
       debug: true,
-      transform: ['uglifyify'],
+      transform: ["uglifyify"],
     })
       .then(output => {
       // The bundle should start with the banner from "banner.txt",
@@ -93,8 +93,8 @@ describe('Browserify API + banner (with options)', function () {
       // and finally, the sourcemap at the end
         inspectBundle(output.bundle, {
           parts: [
-            'banner', 'umd prelude', 'prelude', 'minified modules', 'postlude',
-            'umd postlude', 'sourcemap'
+            "banner", "umd prelude", "prelude", "minified modules", "postlude",
+            "umd postlude", "sourcemap"
           ],
         });
 
@@ -109,15 +109,15 @@ describe('Browserify API + banner (with options)', function () {
       });
   });
 
-  it('should use an inline banner template', function () {
+  it("should use an inline banner template", function () {
     return browserify({
-      entries: 'has-banner/index.js',
+      entries: "has-banner/index.js",
       plugin: [[banner, {
-        template: 'This package was written by <%= pkg.author.name %>',
+        template: "This package was written by <%= pkg.author.name %>",
       }]],
       standalone: true,
       debug: true,
-      transform: ['uglifyify'],
+      transform: ["uglifyify"],
     })
       .then(output => {
       // The bundle should start with our custom banner text,
@@ -127,8 +127,8 @@ describe('Browserify API + banner (with options)', function () {
       // and finally, the sourcemap at the end
         inspectBundle(output.bundle, {
           parts: [
-            'banner', 'umd prelude', 'prelude', 'minified modules', 'postlude',
-            'umd postlude', 'sourcemap'
+            "banner", "umd prelude", "prelude", "minified modules", "postlude",
+            "umd postlude", "sourcemap"
           ],
         });
 
@@ -143,17 +143,17 @@ describe('Browserify API + banner (with options)', function () {
       });
   });
 
-  it('should use an not double-comment banner text', function () {
+  it("should use an not double-comment banner text", function () {
     return browserify({
-      entries: 'has-banner/index.js',
+      entries: "has-banner/index.js",
       plugin: [[banner, {
         template:
-          '// This banner is already a comment\n' +
-          '// <%= pkg.name %> v<%= pkg.version %>\n'
+          "// This banner is already a comment\n" +
+          "// <%= pkg.name %> v<%= pkg.version %>\n"
       }]],
       standalone: true,
       debug: true,
-      transform: ['uglifyify'],
+      transform: ["uglifyify"],
     })
       .then(output => {
       // The bundle should start with our custom banner text,
@@ -163,8 +163,8 @@ describe('Browserify API + banner (with options)', function () {
       // and finally, the sourcemap at the end
         inspectBundle(output.bundle, {
           parts: [
-            '// This banner is already a comment\n// hello-world v1.23.456\n',
-            'umd prelude', 'prelude', 'minified modules', 'postlude', 'umd postlude', 'sourcemap'
+            "// This banner is already a comment\n// hello-world v1.23.456\n",
+            "umd prelude", "prelude", "minified modules", "postlude", "umd postlude", "sourcemap"
           ],
         });
 
@@ -176,18 +176,18 @@ describe('Browserify API + banner (with options)', function () {
       });
   });
 
-  it('should inject a literal banner as-is', function () {
+  it("should inject a literal banner as-is", function () {
     return browserify({
-      entries: 'has-banner/index.js',
+      entries: "has-banner/index.js",
       plugin: [[banner, {
         banner:
-          '// This banner is NOT a template, so <%= this.doesnt.do.anything %>.\n' +
-          '// But I can inject custom code at the top of the bundle...\n' +
-          'window.myCustomVariable = Date.now();\n'
+          "// This banner is NOT a template, so <%= this.doesnt.do.anything %>.\n" +
+          "// But I can inject custom code at the top of the bundle...\n" +
+          "window.myCustomVariable = Date.now();\n"
       }]],
       standalone: true,
       debug: true,
-      transform: ['uglifyify'],
+      transform: ["uglifyify"],
     })
       .then(output => {
       // The bundle should start with our custom banner text,
@@ -197,10 +197,10 @@ describe('Browserify API + banner (with options)', function () {
       // and finally, the sourcemap at the end
         inspectBundle(output.bundle, {
           parts: [
-            '// This banner is NOT a template, so <%= this.doesnt.do.anything %>.\n' +
-          '// But I can inject custom code at the top of the bundle...\n' +
-          'window.myCustomVariable = Date.now();\n',
-            'umd prelude', 'prelude', 'minified modules', 'postlude', 'umd postlude', 'sourcemap'
+            "// This banner is NOT a template, so <%= this.doesnt.do.anything %>.\n" +
+          "// But I can inject custom code at the top of the bundle...\n" +
+          "window.myCustomVariable = Date.now();\n",
+            "umd prelude", "prelude", "minified modules", "postlude", "umd postlude", "sourcemap"
           ],
         });
 
