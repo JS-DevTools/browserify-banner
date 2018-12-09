@@ -6,8 +6,6 @@ Browserify Banner
 [![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/JS-DevTools/browserify-banner?svg=true&branch=master&failingText=Windows%20build%20failing&passingText=Windows%20build%20passing)](https://ci.appveyor.com/project/JamesMessinger/browserify-banner)
 
 [![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/browserify-banner/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/browserify-banner?branch=master)
-[![Codacy Score](https://api.codacy.com/project/badge/Grade/d20aa8b830124acb87b5e6f2114f0d84)](https://www.codacy.com/public/JamesMessinger/browserify-banner)
-[![Inline docs](https://inch-ci.org/github/JS-DevTools/browserify-banner.svg?branch=master&style=shields)](https://inch-ci.org/github/JS-DevTools/browserify-banner)
 [![Dependencies](https://david-dm.org/JS-DevTools/browserify-banner.svg)](https://david-dm.org/JS-DevTools/browserify-banner)
 
 [![npm](https://img.shields.io/npm/v/browserify-banner.svg)](https://www.npmjs.com/package/browserify-banner)
