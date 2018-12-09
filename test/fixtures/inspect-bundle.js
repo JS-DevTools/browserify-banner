@@ -27,6 +27,11 @@ function inspectBundle (bundle, options) {
 function splitBundleIntoParts (bundle) {
   let parts = [];
 
+  // Normalize line endings on Windows
+  if (process.platform === "win32") {
+    bundle = bundle.replace(/\r\n/g, "\n");
+  }
+
   // Find all the parts that exist in the bundle
   for (let part of ALL_PARTS) {
     let startsAt, endsAt;
@@ -174,4 +179,3 @@ module.exports = function say(what, who) {
 `
   },
 ];
-
