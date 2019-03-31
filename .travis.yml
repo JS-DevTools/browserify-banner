@@ -19,8 +19,10 @@ os:
 before_script:
   - npm link
   - npm link browserify-banner
+  - npm run lint
 
-script: npm run lint && npm run coverage
+script:
+  - npm run coverage
 
 after_success:
   # send code-coverage data to Coveralls
