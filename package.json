@@ -38,12 +38,12 @@
   "devDependencies": {
     "browserify": "^16.5.0",
     "chai": "^4.2.0",
-    "coveralls": "^3.0.6",
-    "eslint": "^6.2.2",
+    "coveralls": "^3.0.7",
+    "eslint": "^6.6.0",
     "eslint-config-modular": "^7.0.1",
     "exorcist": "^1.0.1",
     "mkdirp": "^0.5.1",
-    "mocha": "^6.2.0",
+    "mocha": "^6.2.2",
     "npm-check": "^5.9.0",
     "nyc": "^14.1.1",
     "touch": "^3.1.0",
@@ -51,11 +51,11 @@
     "version-bump-prompt": "^5.0.5"
   },
   "dependencies": {
-    "convert-source-map": "^1.6.0",
+    "convert-source-map": "^1.7.0",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "offset-sourcemap-lines": "^1.0.1",
-    "ono": "^5.0.2",
+    "ono": "^5.1.0",
     "through2": "^3.0.1"
   },
   "engines": {
