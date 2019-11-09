@@ -30,7 +30,7 @@
   "scripts": {
     "lint": "eslint lib test/fixtures test/specs",
     "test": "mocha && npm run lint",
-    "coverage": "nyc --reporter=text --reporter=lcov mocha",
+    "coverage": "nyc --reporter=text --reporter=lcov node_modules/mocha/bin/mocha",
     "upgrade": "npm-check -u && npm link browserify-banner",
     "bump": "bump --tag --push --all",
     "release": "npm run upgrade && npm test && npm run bump"
