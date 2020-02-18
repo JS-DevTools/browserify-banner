@@ -2,8 +2,8 @@ Browserify Banner
 ============================
 #### Add a comment (and/or code) to the top of your Browserify bundle
 
-[![Cross-Platform Compatibility](https://jstools.dev/img/badges/os-badges.svg)](https://travis-ci.com/JS-DevTools/browserify-banner)
-[![Build Status](https://api.travis-ci.com/JS-DevTools/browserify-banner.svg?branch=master)](https://travis-ci.com/JS-DevTools/browserify-banner)
+[![Cross-Platform Compatibility](https://jstools.dev/img/badges/os-badges.svg)](https://github.com/JS-DevTools/browserify-banner/blob/master/.github/workflows/CI-CD.yaml)
+[![Build Status](https://github.com/JS-DevTools/browserify-banner/workflows/CI-CD/badge.svg)](https://github.com/JS-DevTools/browserify-banner/blob/master/.github/workflows/CI-CD.yaml)
 
 [![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/browserify-banner/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/browserify-banner?branch=master)
 [![Dependencies](https://david-dm.org/JS-DevTools/browserify-banner.svg)](https://david-dm.org/JS-DevTools/browserify-banner)
