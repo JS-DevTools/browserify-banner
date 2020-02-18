@@ -14,14 +14,14 @@
   "tasks": [
     {
       "taskName": "lint",
-      "args": ["run", "lint", "--silent"],
+      "args": ["run", "lint"],
       "showOutput": "always",
       "problemMatcher": "$eslint-stylish",
       "isBuildCommand": true
     },
     {
       "taskName": "test",
-      "args": ["run", "test", "--silent"],
+      "args": ["run", "test"],
       "showOutput": "always",
       "isTestCommand": true
     }
