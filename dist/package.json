@@ -1,0 +1,36 @@
+{
+  "name": "browserify-banner",
+  "version": "X.X.X",
+  "description": "Add a comment (and/or code) to the top of your Browserify bundle",
+  "keywords": [
+    "browserify",
+    "browserify-plugin",
+    "banner",
+    "header",
+    "prelude",
+    "preamble",
+    "comment",
+    "license",
+    "version"
+  ],
+  "author": {
+    "name": "James Messinger",
+    "url": "https://jamesmessinger.com"
+  },
+  "license": "MIT",
+  "homepage": "https://jstools.dev/browserify-banner",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JS-DevTools/browserify-banner.git"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "@jsdevtools/browserify-banner": "X.X.X"
+  }
+}
