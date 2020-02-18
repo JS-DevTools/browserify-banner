@@ -46,7 +46,7 @@ jobs:
       - name: Link browserify-banner so Browserify can load it
         run: |
           npm link
-          npm link browserify-banner
+          npm link @jsdevtools/browserify-banner
 
       - name: Run linters
         run: npm run lint

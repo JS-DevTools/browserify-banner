@@ -7,8 +7,8 @@ require("chai").should();
 
 describe("Browserify CLI + banner", function () {
   before("Make sure browserify-banner is in node_modules", () => {
-    if (!fs.existsSync("node_modules/browserify-banner")) {
-      throw new Error('node_modules/browserify-banner does not exist.  Try running "npm link browserify-banner"');
+    if (!fs.existsSync("node_modules/@jsdevtools/browserify-banner")) {
+      throw new Error('node_modules/@jsdevtools/browserify-banner does not exist.  Try running "npm link @jsdevtools/browserify-banner"');
     }
   });
 
@@ -20,7 +20,7 @@ describe("Browserify CLI + banner", function () {
         "test/test-apps/has-banner/index.js",
         "--outfile", "test/test-apps/has-banner/dist/bundle.js",
         "--standalone", "Fizz.Buzz",
-        "--plugin", "browserify-banner"
+        "--plugin", "@jsdevtools/browserify-banner"
       ]);
 
     output.should.not.have.property("error");
@@ -51,7 +51,7 @@ describe("Browserify CLI + banner", function () {
         "test/test-apps/has-banner/index.js",
         "--outfile", "test/test-apps/has-banner/dist/bundle.js",
         "--standalone", "Fizz.Buzz",
-        "--plugin", "[", "browserify-banner",
+        "--plugin", "[", "@jsdevtools/browserify-banner",
         "--file", "test/test-apps/has-banner/alt-banner.txt", "]"
       ]);
 
@@ -82,7 +82,7 @@ describe("Browserify CLI + banner", function () {
         "test/test-apps/has-banner/index.js",
         "--outfile", "test/test-apps/has-banner/dist/bundle.js",
         "--standalone", "Fizz.Buzz",
-        "--plugin", "[", "browserify-banner",
+        "--plugin", "[", "@jsdevtools/browserify-banner",
         "--pkg", "test/test-apps/has-banner/alt-package.json", "]"
       ]);
 
@@ -116,7 +116,7 @@ describe("Browserify CLI + banner", function () {
         "test/test-apps/has-banner/index.js",
         "--outfile", "test/test-apps/has-banner/dist/bundle.js",
         "--standalone", "Fizz.Buzz",
-        "--plugin", "[", "browserify-banner",
+        "--plugin", "[", "@jsdevtools/browserify-banner",
         "--template", "This package was written by <%= pkg.author.name %>", "]"
       ]);
 

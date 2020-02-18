@@ -8,8 +8,8 @@ Browserify Banner
 [![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/browserify-banner/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/browserify-banner?branch=master)
 [![Dependencies](https://david-dm.org/JS-DevTools/browserify-banner.svg)](https://david-dm.org/JS-DevTools/browserify-banner)
 
-[![npm](https://img.shields.io/npm/v/browserify-banner.svg)](https://www.npmjs.com/package/browserify-banner)
-[![License](https://img.shields.io/npm/l/browserify-banner.svg)](LICENSE)
+[![npm](https://img.shields.io/npm/v/@jsdevtools/browserify-banner.svg)](https://www.npmjs.com/package/@jsdevtools/browserify-banner)
+[![License](https://img.shields.io/npm/l/@jsdevtools/browserify-banner.svg)](LICENSE)
 
 Features
 --------------------------
@@ -62,7 +62,7 @@ Installation
 Install using [npm](https://docs.npmjs.com/getting-started/what-is-npm):
 
 ```bash
-npm install browserify-banner
+npm install @jsdevtools/browserify-banner
 ```
 
 
@@ -72,19 +72,19 @@ Usage
 If used without any options, then it will automatically search for a file named "banner.txt".
 
 ```bash
-browserify -p browserify-banner
+browserify -p @jsdevtools/browserify-banner
 ```
 
 Or you can use Browserify's sub-argument command-line syntax to specify a different file:
 
 ```bash
-browserify -p [ browserify-banner --file src/license.txt ]
+browserify -p [ @jsdevtools/browserify-banner --file src/license.txt ]
 ```
 
 Or you can specify the banner template directly:
 
 ```bash
-browserify -p [ browserify-banner --template "<%= pkg.name %> v<%= pkg.version %>" ]
+browserify -p [ @jsdevtools/browserify-banner --template "<%= pkg.name %> v<%= pkg.version %>" ]
 ```
 
 ### Browserify API
@@ -92,7 +92,7 @@ Use the plugin programmatically like this:
 
 ```javascript
 var browserify = require('browserify');
-var banner = require('browserify-banner');
+var banner = require('@jsdevtools/browserify-banner');
 
 browserify({debug: true})
   .plugin(banner, {
@@ -125,10 +125,10 @@ browserify({debug: true})
 Options
 --------------------------
 #### `file` (string)
-The path of a file to load the banner template from.  The contents of this file are read and assigned to the `template` option. By default, `browserify-banner` will search for a file named "banner.txt", starting in the directory of your bundle's entry file, and crawling up the directory tree from there.
+The path of a file to load the banner template from.  The contents of this file are read and assigned to the `template` option. By default, Browserify Banner will search for a file named "banner.txt", starting in the directory of your bundle's entry file, and crawling up the directory tree from there.
 
 #### `package` (string or object)
-The path of the package.json file to apply to the banner template.  Or you can set it to an object that will be applied as-is to the template.  By default, `browserify-banner` will use the first package.json file that is loaded by Browserify, which is usually the one associated with your bundle's entry file.
+The path of the package.json file to apply to the banner template.  Or you can set it to an object that will be applied as-is to the template.  By default, Browserify Banner will use the first package.json file that is loaded by Browserify, which is usually the one associated with your bundle's entry file.
 
 #### `template` (string)
 A [Lodash template](https://lodash.com/docs/4.16.6#template) that will be used to create your bundle's banner. By default, this property is automatically set to the contents of the `file` option, but if you set `template` option, then it overrides the `file` option.
@@ -156,7 +156,7 @@ To build the project locally on your computer:
 
 3. __Link the module to itself__ (so Browserify can find the plugin)<br>
 `npm link`<br>
-`npm link browserify-banner`
+`npm link @jsdevtools/browserify-banner`
 
 4. __Run the tests__<br>
 `npm test`
@@ -165,7 +165,7 @@ To build the project locally on your computer:
 
 License
 --------------------------
-browserify-banner is 100% free and open-source, under the [MIT license](LICENSE). Use it however you want.
+Browserify Banner is 100% free and open-source, under the [MIT license](LICENSE). Use it however you want.
 
 
 Big Thanks To
