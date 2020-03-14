@@ -2,7 +2,6 @@
 
 const Browserify = require("browserify");
 const exorcist = require("exorcist");
-const mkdirp = require("mkdirp");
 const touch = require("touch");
 const path = require("path");
 const fs = require("fs");
@@ -27,7 +26,7 @@ function runBrowserify (options) {
 
   return new Promise((resolve, reject) => {
     // Create the output folder & file(s)
-    mkdirp.sync(outputDir);
+    fs.mkdirSync(outputDir, { recursive: true });
     touch.sync(bundlePath);
     sourcemapPath && touch.sync(sourcemapPath);
 
