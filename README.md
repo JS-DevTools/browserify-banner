@@ -2,8 +2,8 @@ Browserify Banner
 ============================
 #### Add a comment (and/or code) to the top of your Browserify bundle
 
-[![Cross-Platform Compatibility](https://jstools.dev/img/badges/os-badges.svg)](https://github.com/JS-DevTools/browserify-banner/blob/master/.github/workflows/CI-CD.yaml)
-[![Build Status](https://github.com/JS-DevTools/browserify-banner/workflows/CI-CD/badge.svg)](https://github.com/JS-DevTools/browserify-banner/blob/master/.github/workflows/CI-CD.yaml)
+[![Cross-Platform Compatibility](https://jstools.dev/img/badges/os-badges.svg)](https://github.com/JS-DevTools/browserify-banner/actions)
+[![Build Status](https://github.com/JS-DevTools/browserify-banner/workflows/CI-CD/badge.svg)](https://github.com/JS-DevTools/browserify-banner/actions)
 
 [![Coverage Status](https://coveralls.io/repos/github/JS-DevTools/browserify-banner/badge.svg?branch=master)](https://coveralls.io/github/JS-DevTools/browserify-banner?branch=master)
 [![Dependencies](https://david-dm.org/JS-DevTools/browserify-banner.svg)](https://david-dm.org/JS-DevTools/browserify-banner)
@@ -148,7 +148,7 @@ If this option is set, then all other options are ignored and this banner is inj
 
 Contributing
 --------------------------
-Contributions, enhancements, and bug-fixes are welcome!  [File an issue](https://github.com/JS-DevTools/browserify-banner/issues) on GitHub and [submit a pull request](https://github.com/JS-DevTools/browserify-banner/pulls).
+Contributions, enhancements, and bug-fixes are welcome!  [Open an issue](https://github.com/JS-DevTools/browserify-banner/issues) on GitHub and [submit a pull request](https://github.com/JS-DevTools/browserify-banner/pulls).
 
 #### Building
 To build the project locally on your computer:
