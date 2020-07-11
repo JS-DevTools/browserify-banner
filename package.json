@@ -37,26 +37,26 @@
     "release": "npm run upgrade && npm run clean && npm test && npm run bump"
   },
   "devDependencies": {
-    "@jsdevtools/eslint-config-modular": "^8.0.0",
-    "@jsdevtools/version-bump-prompt": "^6.0.2",
-    "browserify": "^16.5.0",
+    "@jsdevtools/eslint-config-modular": "^8.0.3",
+    "@jsdevtools/version-bump-prompt": "^6.0.3",
+    "browserify": "^16.5.1",
     "chai": "^4.2.0",
-    "eslint": "^6.8.0",
+    "eslint": "^7.4.0",
     "exorcist": "^1.0.1",
-    "mocha": "^7.1.0",
+    "mocha": "^8.0.1",
     "npm-check": "^5.9.2",
-    "nyc": "^15.0.0",
+    "nyc": "^15.1.0",
     "shx": "^0.3.2",
     "touch": "^3.1.0",
     "uglifyify": "^5.0.2"
   },
   "dependencies": {
-    "@jsdevtools/ono": "^7.1.0",
+    "@jsdevtools/ono": "^7.1.2",
     "convert-source-map": "^1.7.0",
-    "lodash": "^4.17.15",
-    "moment": "^2.24.0",
+    "lodash": "^4.17.19",
+    "moment": "^2.27.0",
     "offset-sourcemap-lines": "^1.0.1",
-    "through2": "^3.0.1"
+    "through2": "^4.0.2"
   },
   "engines": {
     "node": ">=10"
