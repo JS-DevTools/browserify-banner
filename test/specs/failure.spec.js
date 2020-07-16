@@ -5,8 +5,8 @@ const inspectBundle = require("../fixtures/inspect-bundle");
 const banner = require("../../");
 require("chai").should();
 
-describe("failure tests", function () {
-  it("should do nothing if run as a Browserify transform", function () {
+describe("failure tests", () => {
+  it("should do nothing if run as a Browserify transform", () => {
     return browserify({
       entries: "has-banner/index.js",
       transform: [banner],
@@ -20,7 +20,7 @@ describe("failure tests", function () {
       });
   });
 
-  it("should throw an error if the banner file doesn't exist", function () {
+  it("should throw an error if the banner file doesn't exist", () => {
     return browserify({
       entries: "no-banner/index.js",
       plugin: [banner],
@@ -34,7 +34,7 @@ describe("failure tests", function () {
       );
   });
 
-  it("should throw an error if the package.json file doesn't exist", function () {
+  it("should throw an error if the package.json file doesn't exist", () => {
     return browserify({
       entries: "no-banner/index.js",
       plugin: [[banner, { pkg: "this/file/does/not/exist.json" }]],
@@ -48,7 +48,7 @@ describe("failure tests", function () {
       );
   });
 
-  it("should throw an error if the banner template contain syntax errors", function () {
+  it("should throw an error if the banner template contain syntax errors", () => {
     return browserify({
       entries: "no-banner/index.js",
       plugin: [[banner, {

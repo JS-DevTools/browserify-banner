@@ -6,8 +6,8 @@ const inspectSourcemap = require("../fixtures/inspect-sourcemap");
 const banner = require("../../");
 require("chai").should();
 
-describe("Browserify API + banner (with options)", function () {
-  it("should use an alternate banner file", function () {
+describe("Browserify API + banner (with options)", () => {
+  it("should use an alternate banner file", () => {
     return browserify({
       entries: "has-banner/index.js",
       plugin: [[banner, { file: "test/test-apps/has-banner/alt-banner.txt" }]],
@@ -36,7 +36,7 @@ describe("Browserify API + banner (with options)", function () {
       });
   });
 
-  it("should use an alternate package file", function () {
+  it("should use an alternate package file", () => {
     return browserify({
       entries: "has-banner/index.js",
       plugin: [[banner, { pkg: "test/test-apps/has-banner/alt-package.json" }]],
@@ -68,7 +68,7 @@ describe("Browserify API + banner (with options)", function () {
       });
   });
 
-  it("should use an alternate package object", function () {
+  it("should use an alternate package object", () => {
     return browserify({
       entries: "has-banner/index.js",
       plugin: [[banner, {
@@ -109,7 +109,7 @@ describe("Browserify API + banner (with options)", function () {
       });
   });
 
-  it("should use an inline banner template", function () {
+  it("should use an inline banner template", () => {
     return browserify({
       entries: "has-banner/index.js",
       plugin: [[banner, {
@@ -143,7 +143,7 @@ describe("Browserify API + banner (with options)", function () {
       });
   });
 
-  it("should use an not double-comment banner text", function () {
+  it("should use an not double-comment banner text", () => {
     return browserify({
       entries: "has-banner/index.js",
       plugin: [[banner, {
@@ -176,7 +176,7 @@ describe("Browserify API + banner (with options)", function () {
       });
   });
 
-  it("should inject a literal banner as-is", function () {
+  it("should inject a literal banner as-is", () => {
     return browserify({
       entries: "has-banner/index.js",
       plugin: [[banner, {

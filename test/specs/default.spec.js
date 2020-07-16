@@ -5,8 +5,8 @@ const inspectBundle = require("../fixtures/inspect-bundle");
 const inspectSourcemap = require("../fixtures/inspect-sourcemap");
 require("chai").should();
 
-describe("Browserify API only (without banner)", function () {
-  it("should output a default Browserify bundle", function () {
+describe("Browserify API only (without banner)", () => {
+  it("should output a default Browserify bundle", () => {
     return browserify({
       entries: "no-banner/index.js"
     })
@@ -19,7 +19,7 @@ describe("Browserify API only (without banner)", function () {
       });
   });
 
-  it("should output a bundle and sourcemap", function () {
+  it("should output a bundle and sourcemap", () => {
     return browserify({
       entries: "no-banner/index.js",
       debug: true,
@@ -38,7 +38,7 @@ describe("Browserify API only (without banner)", function () {
       });
   });
 
-  it("should output a minified bundle and sourcemap", function () {
+  it("should output a minified bundle and sourcemap", () => {
     return browserify({
       entries: "no-banner/index.js",
       debug: true,
@@ -58,7 +58,7 @@ describe("Browserify API only (without banner)", function () {
       });
   });
 
-  it("should output a UMD bundle", function () {
+  it("should output a UMD bundle", () => {
     return browserify({
       entries: "no-banner/index.js",
       standalone: true,
@@ -73,7 +73,7 @@ describe("Browserify API only (without banner)", function () {
       });
   });
 
-  it("should output a UMD bundle and sourcemap", function () {
+  it("should output a UMD bundle and sourcemap", () => {
     return browserify({
       entries: "no-banner/index.js",
       standalone: true,
@@ -95,7 +95,7 @@ describe("Browserify API only (without banner)", function () {
       });
   });
 
-  it("should output a minified UMD bundle and sourcemap", function () {
+  it("should output a minified UMD bundle and sourcemap", () => {
     return browserify({
       entries: "no-banner/index.js",
       standalone: true,

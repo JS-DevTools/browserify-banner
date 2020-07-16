@@ -6,8 +6,8 @@ const inspectSourcemap = require("../fixtures/inspect-sourcemap");
 const banner = require("../../");
 require("chai").should();
 
-describe("Browserify API + banner (no options)", function () {
-  it("should output a default Browserify bundle", function () {
+describe("Browserify API + banner (no options)", () => {
+  it("should output a default Browserify bundle", () => {
     return browserify({
       entries: "has-banner/index.js",
       plugin: [banner],
@@ -22,7 +22,7 @@ describe("Browserify API + banner (no options)", function () {
       });
   });
 
-  it("should output a bundle and sourcemap", function () {
+  it("should output a bundle and sourcemap", () => {
     return browserify({
       entries: "has-banner/index.js",
       plugin: [banner],
@@ -44,7 +44,7 @@ describe("Browserify API + banner (no options)", function () {
       });
   });
 
-  it("should output a minified bundle and sourcemap", function () {
+  it("should output a minified bundle and sourcemap", () => {
     return browserify({
       entries: "has-banner/index.js",
       plugin: [banner],
@@ -67,7 +67,7 @@ describe("Browserify API + banner (no options)", function () {
       });
   });
 
-  it("should output a UMD bundle", function () {
+  it("should output a UMD bundle", () => {
     return browserify({
       entries: "has-banner/index.js",
       plugin: [banner],
@@ -84,7 +84,7 @@ describe("Browserify API + banner (no options)", function () {
       });
   });
 
-  it("should output a UMD bundle and sourcemap", function () {
+  it("should output a UMD bundle and sourcemap", () => {
     return browserify({
       entries: "has-banner/index.js",
       plugin: [banner],
@@ -111,7 +111,7 @@ describe("Browserify API + banner (no options)", function () {
       });
   });
 
-  it("should output a minified UMD bundle and sourcemap", function () {
+  it("should output a minified UMD bundle and sourcemap", () => {
     return browserify({
       entries: "has-banner/index.js",
       plugin: [banner],

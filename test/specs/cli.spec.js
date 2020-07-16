@@ -5,14 +5,14 @@ const spawnSync = require("child_process").spawnSync;
 const inspectBundle = require("../fixtures/inspect-bundle");
 require("chai").should();
 
-describe("Browserify CLI + banner", function () {
+describe("Browserify CLI + banner", () => {
   before("Make sure browserify-banner is in node_modules", () => {
     if (!fs.existsSync("node_modules/@jsdevtools/browserify-banner")) {
       throw new Error('node_modules/@jsdevtools/browserify-banner does not exist.  Try running "npm link @jsdevtools/browserify-banner"');
     }
   });
 
-  it("should use the default banner file", function (done) {
+  it("should use the default banner file", (done) => {
     let output = spawnSync(
       "node", [
         "--no-warnings",
@@ -24,8 +24,8 @@ describe("Browserify CLI + banner", function () {
       ]);
 
     output.should.not.have.property("error");
-    output.stdout.toString().should.be.empty;
-    output.stderr.toString().should.be.empty;
+    output.stdout.toString().should.have.lengthOf(0);
+    output.stderr.toString().should.have.lengthOf(0);
     output.status.should.equal(0);
 
     // The bundle should start with the banner from "alt-banner.txt",
@@ -43,7 +43,7 @@ describe("Browserify CLI + banner", function () {
     done();
   });
 
-  it("should use an alternate banner file", function (done) {
+  it("should use an alternate banner file", (done) => {
     let output = spawnSync(
       "node", [
         "--no-warnings",
@@ -56,7 +56,7 @@ describe("Browserify CLI + banner", function () {
       ]);
 
     output.should.not.have.property("error");
-    output.stdout.toString().should.be.empty;
+    output.stdout.toString().should.have.lengthOf(0);
     output.status.should.equal(0);
 
     // The bundle should start with the banner from "alt-banner.txt",
@@ -74,7 +74,7 @@ describe("Browserify CLI + banner", function () {
     done();
   });
 
-  it("should use an alternate package file", function (done) {
+  it("should use an alternate package file", (done) => {
     let output = spawnSync(
       "node", [
         "--no-warnings",
@@ -87,7 +87,7 @@ describe("Browserify CLI + banner", function () {
       ]);
 
     output.should.not.have.property("error");
-    output.stdout.toString().should.be.empty;
+    output.stdout.toString().should.have.lengthOf(0);
     output.status.should.equal(0);
 
     // The bundle should start with the banner from "banner.txt",
@@ -108,7 +108,7 @@ describe("Browserify CLI + banner", function () {
     done();
   });
 
-  it("should use an inline banner template", function (done) {
+  it("should use an inline banner template", (done) => {
     let output = spawnSync(
       "node", [
         "--no-warnings",
@@ -121,7 +121,7 @@ describe("Browserify CLI + banner", function () {
       ]);
 
     output.should.not.have.property("error");
-    output.stdout.toString().should.be.empty;
+    output.stdout.toString().should.have.lengthOf(0);
     output.status.should.equal(0);
 
     // The bundle should start with our custom banner text,
